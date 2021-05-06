@@ -1,0 +1,24 @@
+name: Windows-CRD
+
+on: 
+  workflow_dispatch:
+    inputs:
+      authcode:
+        description: 'Masukin CRD lu'
+        required: true
+      pincode:
+        description: 'Buat 6 Pin Sandi'
+        required: true
+  
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: KONTOLLLLL
+      run: ./setup.ps1
+    - name: KONTOLLLLL
+      run: ${{ github.event.inputs.authcode }} -pin=${{ github.event.inputs.pincode }}
+    - name: KONTOLLLLL GIMAGGGGGGGGG
+      run: ./timeout.ps1
